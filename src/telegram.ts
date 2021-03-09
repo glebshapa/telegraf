@@ -552,6 +552,14 @@ export class Telegram extends ApiClient {
     return this.callApi('exportChatInviteLink', { chat_id: chatId })
   }
 
+  createChatInviteLink(chatId, extra) {
+    return this.callApi('createChatInviteLink', { chat_id: chatId, ...extra });
+  }
+
+  editChatInviteLink(chatId, inviteLink, extra) {
+    return this.callApi('editChatInviteLink', { chat_id: chatId, invite_link: inviteLink, ...extra });
+  }
+
   setChatPhoto(
     chatId: number | string,
     photo: tt.Opts<'setChatPhoto'>['photo']
